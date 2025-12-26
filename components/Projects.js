@@ -11,7 +11,6 @@ const Projects = () => {
   const headingRef = useRef(null);
 
   useEffect(() => {
-    // Select all cards using GSAP utility
     const cards = gsap.utils.toArray(`.${styles.projectCard}`);
 
     // Animate heading
@@ -91,13 +90,10 @@ const Projects = () => {
       </h1>
       <div className={styles.projectsCardsGrid}>
         {projectsData.map((project, index) => (
-          <div
-            key={index}
-            className={styles.projectCard}
-          >
+          <div key={index} className={styles.projectCard}>
             <h5 className={styles.cardSubt}>{project.name}</h5>
             <p className={styles.cardRole}>{project.role}</p>
-            <p className={styles.cardFeedback}>"{project.feedback}"</p>
+            <p className={styles.cardFeedback}>{project.feedback}</p>
           </div>
         ))}
       </div>
@@ -106,8 +102,6 @@ const Projects = () => {
 };
 
 export default Projects;
-
-
 
 
 
